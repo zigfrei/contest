@@ -10,11 +10,10 @@ public class solution {
             content+=proof +" ";
         }
         reader.close();
-        System.out.println(content);
-        int summa=0;
+        long summa=0;
         String mcontent[] =content.split(" ");
         for(int i=0;i<mcontent.length;i++){
-            summa+=Integer.parseInt(mcontent[i]);
+            summa+=Long.parseLong(mcontent[i]);
         }
         String sum = summa/mcontent.length+"";
         FileWriter writer = new FileWriter("output.txt",false);
