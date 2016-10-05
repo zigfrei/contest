@@ -18,7 +18,6 @@ public class solution {
         String sum = summa/mcontent.length+"";
         FileWriter writer = new FileWriter("output.txt",false);
         writer.write(sum + '\n');
-
         writer.flush();
 
     }
