@@ -1,24 +1,25 @@
 import java.io.*;
 
-/**
- * Created by User on 05.10.2016.
- */
+
 public class solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         String content="";
         String proof;
-        try{
         BufferedReader reader =new BufferedReader(new FileReader("input.txt"));
         while ((proof=reader.readLine())!=null){
             content+=proof;
         }
-        reader.close();}catch (Exception e){}
+        reader.close();
+        int summa=0;
         String mcontent[] =content.split(" ");
-        int sum =Integer.parseInt(mcontent[0]) +Integer.parseInt(mcontent[1]);
-        try{
-        OutputStream outStr =new FileOutputStream("output.txt");
-        outStr.write((sum + System.lineSeparator()).getBytes());
-        outStr.close();}catch (Exception e){}
+        for(int i=0;i<mcontent.length;i++){
+            summa+=Integer.parseInt(mcontent[i]);
+        }
+        String sum = summa/mcontent.length+"";
+        FileWriter writer = new FileWriter("output.txt",false);
+        writer.write(sum + '\n');
+
+        writer.flush();
 
     }
 }
