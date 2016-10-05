@@ -9,6 +9,7 @@ public class solution {
         while ((proof=reader.readLine())!=null){
             content+=proof +" ";
         }
+
         reader.close();
         long summa=0;
         String mcontent[] =content.split(" ");
