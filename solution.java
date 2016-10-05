@@ -7,9 +7,10 @@ public class solution {
         String proof;
         BufferedReader reader =new BufferedReader(new FileReader("input.txt"));
         while ((proof=reader.readLine())!=null){
-            content+=proof;
+            content+=proof +" ";
         }
         reader.close();
+        System.out.println(content);
         int summa=0;
         String mcontent[] =content.split(" ");
         for(int i=0;i<mcontent.length;i++){
