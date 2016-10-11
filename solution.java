@@ -1,7 +1,22 @@
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 
 public class solution {
+  /*  public static void bubble(int[] arr){
+
+        for(int i = arr.length-1 ; i > 0 ; i--){
+            for(int j = 0 ; j < i ; j++){
+            if( arr[j] > arr[j+1] ){
+                int tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+        }
+    }
+}*/
+
     public static void main(String[] args) throws IOException{
         String content="";
         String proof;
@@ -9,16 +24,26 @@ public class solution {
         while ((proof=reader.readLine())!=null){
             content+=proof +" ";
         }
-
         reader.close();
-        long summa=0;
+        int n;
+
+
         String mcontent[] =content.split(" ");
-        for(int i=0;i<mcontent.length;i++){
-            summa+=Long.parseLong(mcontent[i]);
+        n=Integer.parseInt(mcontent[0]);
+        int k[]=new int[n];
+        for(int i=1;i<mcontent.length;i++){
+
+            k[i-1]=Integer.parseInt(mcontent[i]);
         }
-        String sum = summa/mcontent.length+"";
+        Arrays.sort(k);
+        String result=""+k[0];
+        for(int i=1;i<k.length;i++) {
+            result = result+" " +k[i];
+        }
+
         FileWriter writer = new FileWriter("output.txt",false);
-        writer.write(sum + '\n');
+
+        writer.write(result + '\n');
         writer.flush();
 
     }
