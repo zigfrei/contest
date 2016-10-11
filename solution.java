@@ -40,7 +40,6 @@ public class solution {
         for(int i=1;i<k.length;i++) {
             result = result+" " +k[i];
         }
-
         FileWriter writer = new FileWriter("output.txt",false);
 
         writer.write(result + '\n');
